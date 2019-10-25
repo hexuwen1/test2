@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="text-align: center">在线问答</h1>
+<h3 style="text-align: center"><a href="/onlineQA/question/">我要提问</a></h3>
+<center>
+    <table style="text-align: center" border="1px">
+    <thead>
+        <tr>
+            <th>序号</th>
+            <th>问题</th>
+            <th>回答次数</th>
+            <th>最后修改</th>
+        </tr>
+    </thead>
+    <today>
+        {% for questions in questions_list %}
+        <tr>
+            <td>{{ questions.id }}</td>
+            <td><a href="/onlineQA/{{ questions.id }}/detail">{{ questions.title }}</a></td>
+            <td>{{ questions.answerCount }}</td>
+            <td>{{ questions.lastModified|date:"Y-m-d" }}</td>
+        </tr>
+        {% endfor %}
+    </today>
+</table>
+</center>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post">
+    <div style="text-align: center">
+    问题:<input type="text" value="{{ detail_obj.title }}"><br>
+    问题描述:<input type="text" value="{{ detail_obj.detailDesc }}"><br>
+    {% for answers in answers_obj %}
+    网友回答:<input type="text" value="{{ answers.ansContent }}"><br>
+    {% endfor %}
+    我来回答:<input type="text" name="ansContent"><br>
+    <input type="submit" value="提交答案">
+    <a href="/onlineQA/">返回首页</a>
+</div>
+</form>
+</body>
+</html>
